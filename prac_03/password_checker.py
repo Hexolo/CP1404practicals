@@ -8,6 +8,10 @@ def main():
     while not is_valid_password(password):
         print(f"Invalid password: Your password must be between {MIN_LENGTH} and {MAX_LENGTH} characters")
         password = input("Please enter you new password: ")
+    display_asterisk(password)
+
+
+def display_asterisk(password):
     for char in password:
         print("*", end=" ")
 
