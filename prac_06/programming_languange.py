@@ -1,4 +1,3 @@
-
 class ProgrammingLanguage:
     def __init__(self, field="", typing="", reflection="", year=0):
         self.field = field
@@ -11,3 +10,8 @@ class ProgrammingLanguage:
             return True
         else:
             return False
+
+    def __str__(self):
+        return "{}, {} Typing , Reflection={}, First Appeared in {}".format(self.field, self.typing, self.reflection,
+                                                                            self.year)
+    
