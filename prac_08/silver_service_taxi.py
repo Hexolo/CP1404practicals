@@ -11,14 +11,16 @@ class SilverServiceTaxi(Taxi):
 
     def __str__(self):
         """Return a string like a Car but with current fare distance."""
-        return "{}, fuel={} {}km on current fare, ${:.2f}/km plus flagfall of ${}".format(self.name, self.fuel,
-                                                                                          self.current_fare_distance,
-                                                                                          self.price_per_km,
-                                                                                          self.flagfall)
+        return "{}, fuel={}, odometer={}, {}km on current fare, ${:.2f}/km plus flagfall of ${}".format(self.name,
+                                                                                                        self.fuel,
+                                                                                                        self.odometer,
+                                                                                                        self.current_fare_distance,
+                                                                                                        self.price_per_km,
+                                                                                                        self.flagfall)
 
     def get_fare(self):
         """Return the price for the taxi trip."""
-        return self.price_per_km * self.current_fare_distance
+        return self.price_per_km * self.current_fare_distance + self.flagfall
 
     # def start_fare(self):
     #     """Begin a new fare."""
